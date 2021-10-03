@@ -1,10 +1,10 @@
-.. PACKAGE_NAME documentation master file, created by
+.. SweetRPG Model Core documentation master file, created by
    sphinx-quickstart on Tue Sep 14 01:41:42 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to PACKAGE_NAME's documentation!
-===========================================
+Welcome to Model Core's documentation!
+======================================
 
 .. toctree::
    :maxdepth: 2

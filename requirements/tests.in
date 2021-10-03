@@ -11,4 +11,4 @@ tox==3.24.4
 coverage-badge
 python-dotenv
 dnspython<2.0.0
-PyMongo[tls,srv]
+PyMongo[tls,srv]==3.12

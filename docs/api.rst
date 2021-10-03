@@ -1,11 +1,20 @@
 API
 ===
 
-.. module:: BASE_PACKAGE
+.. module:: sweetrpg_model_core
 
-Utilities
----------
+Schemas
+-------
 
-.. module:: BASE_PACKAGE.utils
+.. autoclass:: sweetrpg_model_core.schema.base.BaseSchema
+   :members:
+   :undoc-members:
+   :private-members:
 
-.. autofunction:: func_name
+Converters
+----------
+
+.. module:: sweetrpg_model_core.convert
+
+.. autofunction:: sweetrpg_model_core.convert.date.to_datetime
+.. autofunction:: sweetrpg_model_core.convert.date.to_timestamp
