@@ -12,7 +12,7 @@ backports.entry-points-selectable==1.1.0
     # via virtualenv
 blinker==1.4
     # via -r ./tests.in
-coverage==6.0
+coverage[toml]==6.0
     # via pytest-cov
 coverage-badge==1.0.1
     # via -r ./tests.in
@@ -58,7 +58,7 @@ pytest==6.2.5
     #   pytest-cov
     #   pytest-env
     #   pytest-ordering
-pytest-cov==2.12.1
+pytest-cov==3.0
     # via -r ./tests.in
 pytest-env==0.6.2
     # via -r ./tests.in
@@ -73,8 +73,9 @@ six==1.16.0
 toml==0.10.2
     # via
     #   pytest
-    #   pytest-cov
     #   tox
+tomli==1.2.1
+    # via coverage
 tox==3.24.4
     # via -r ./tests.in
 virtualenv==20.8.1

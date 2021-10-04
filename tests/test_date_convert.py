@@ -48,7 +48,7 @@ def test_dict_to_datetime():
     assert v.year == 2021
     assert v.month == 8
     assert v.day == 1
-    assert v.hour == 0
+    assert v.hour == 7
     assert v.minute == 0
     assert v.second == 0
     assert v.microsecond == 0

@@ -1,6 +1,6 @@
 -r pkg.in
 pytest
-pytest-cov
+pytest-cov==3.0
 pytest-ordering
 pytest-env
 asgiref
