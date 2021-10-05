@@ -36,7 +36,7 @@ class BaseModel(object):
                 continue
             # v = getattr(self, k)
             attrs.append("{k}={v}".format(k=k, v=v))
-        return f'<{self.__name__}({", ".join(attrs)})>'
+        return f'<{self.__class__.__name__}({", ".join(attrs)})>'
 
     def to_dict(self) -> dict:
         """Returns a dictionary representation of the model object.
