@@ -47,6 +47,7 @@ def to_model(doc, model_class):
     logging.debug("data: %s", data)
     for k, v in data.items():
         data[k] = convert_document_property_value(v)
+    logging.debug("converted data: %s", data)
     model = model_class(**data)
     logging.debug("model: %s", model)
 
