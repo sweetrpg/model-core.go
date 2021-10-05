@@ -20,19 +20,23 @@ class BaseModel(object):
         now = datetime.utcnow()  # .isoformat()
 
         self.id = kwargs.get("_id") or kwargs.get("id")
+        logging.debug("self: %s, id: %s", self, self.id)
         self.created_at = to_datetime(kwargs.get("created_at")) or now
+        logging.debug("self: %s, created_at: %s", self, self.created_at)
         self.updated_at = to_datetime(kwargs.get("updated_at")) or now
+        logging.debug("self: %s, updated_at: %s", self, self.updated_at)
         self.deleted_at = to_datetime(kwargs.get("deleted_at"))
+        logging.debug("self: %s, deleted_at: %s", self, self.deleted_at)
 
     @recursive_repr()
     def __repr__(self):
         attrs = []
         for k, v in self.__dict__.items():
-            if k.startswith("__"):
+            if k.startswith("__") or k.startswith("to_"):
                 continue
             # v = getattr(self, k)
             attrs.append("{k}={v}".format(k=k, v=v))
-        return f'<Volume({", ".join(attrs)})>'
+        return f'<{self.__name__}({", ".join(attrs)})>'
 
     def to_dict(self) -> dict:
         """Returns a dictionary representation of the model object.
@@ -41,11 +45,11 @@ class BaseModel(object):
             dict: A Python dictionary.
         """
         d = {}
-        for k in dir(self):
-            logging.debug("k: %s, type: %s", k, type(k))
+        for k, v in self.__dict__.items():
+            logging.debug("k: %s, type: %s, v: %s", k, type(k), v)
             if k.startswith("__") or k.startswith("to_"):
                 continue
-            d[k] = getattr(self, k)
+            d[k] = v  # getattr(self, k)
         return d
 
 
