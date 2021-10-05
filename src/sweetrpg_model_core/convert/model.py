@@ -7,28 +7,6 @@ import logging
 import json
 
 
-def to_model(doc, model_class):
-    """Convert a database document to a model instance.
-
-    :param Document doc: The input document to convert. This instance must have a to_json() function that returns
-        a dictionary of the document data.
-    :param class model_class: The type of model class to convert to. This class must accept kwargs
-        in its initializer.
-    :returns: An instance of the model class, initialized with the document data.
-    """
-    logging.debug("doc: %s, model_class: %s", doc, model_class)
-    if not hasattr(doc, "to_json"):
-        return None
-    j = doc.to_json()
-    logging.debug("j: %s", j)
-    data = json.loads(j)
-    logging.debug("data: %s", data)
-    model = model_class(**data)
-    logging.debug("model: %s", model)
-
-    return model
-
-
 def to_document(model, document_class):
     """Convert a model object to a database document.
 
