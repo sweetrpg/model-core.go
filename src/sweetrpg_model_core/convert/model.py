@@ -4,6 +4,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """
 
 import logging
+import json
 
 
 def to_model(doc, model_class):
@@ -18,7 +19,9 @@ def to_model(doc, model_class):
     logging.debug("doc: %s, model_class: %s", doc, model_class)
     if not hasattr(doc, "to_json"):
         return None
-    data = doc.to_json()
+    j = doc.to_json()
+    logging.debug("j: %s", j)
+    data = json.loads(j)
     logging.debug("data: %s", data)
     model = model_class(**data)
     logging.debug("model: %s", model)
