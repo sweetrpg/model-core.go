@@ -20,13 +20,13 @@ class BaseModel(object):
         now = datetime.utcnow()  # .isoformat()
 
         self.id = kwargs.get("_id") or kwargs.get("id")
-        logging.debug("self: %s, id: %s", self, self.id)
+        logging.debug("id: %s", self.id)
         self.created_at = to_datetime(kwargs.get("created_at")) or now
-        logging.debug("self: %s, created_at: %s", self, self.created_at)
+        logging.debug("created_at: %s", self.created_at)
         self.updated_at = to_datetime(kwargs.get("updated_at")) or now
-        logging.debug("self: %s, updated_at: %s", self, self.updated_at)
+        logging.debug("updated_at: %s", self.updated_at)
         self.deleted_at = to_datetime(kwargs.get("deleted_at"))
-        logging.debug("self: %s, deleted_at: %s", self, self.deleted_at)
+        logging.debug("deleted_at: %s", self.deleted_at)
 
     @recursive_repr()
     def __repr__(self):
