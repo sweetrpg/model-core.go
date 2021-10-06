@@ -3,7 +3,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """Test cases for model conversion
 """
 
-from sweetrpg_model_core.convert.model import to_model
+from sweetrpg_model_core.convert.document import to_model
 import json
 
 
