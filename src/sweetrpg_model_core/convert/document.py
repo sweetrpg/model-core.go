@@ -43,7 +43,7 @@ def to_model(doc, model_class):
         return None
     j = doc.to_json()
     logging.debug("j: %s", j)
-    data = json.loads(j)
+    data = j  # json.loads(j)
     logging.debug("data: %s", data)
     for k, v in data.items():
         data[k] = convert_document_property_value(v)
