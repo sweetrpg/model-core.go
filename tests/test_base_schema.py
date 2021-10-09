@@ -3,7 +3,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """Test cases for BaseSchema
 """
 
-from sweetrpg_model_core.schema.base import BaseSchema
+from sweetrpg_model_core.schema.base import BaseSchema, BaseEmbeddedSchema
 from marshmallow import fields
 from datetime import datetime
 
@@ -20,3 +20,15 @@ def test_base_schema():
     assert obj.name == "Test"
     assert isinstance(obj.created_at, datetime)
     assert isinstance(obj.updated_at, datetime)
+
+
+def test_base_embedded_schema():
+    class TestEmbeddedSchema(BaseEmbeddedSchema):
+        name = fields.Str()
+
+    data = {"id": "1", "name": "Test"}
+    schema = TestEmbeddedSchema()
+    obj = schema.from_dict(data)
+    assert obj is not None
+    assert obj.id == "1"
+    assert obj.name == "Test"

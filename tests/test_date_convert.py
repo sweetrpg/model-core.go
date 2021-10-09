@@ -5,7 +5,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 
 from sweetrpg_model_core.convert.date import to_datetime, to_timestamp
 from bson.timestamp import Timestamp
-from datetime import datetime
+from datetime import datetime, timezone
 import time
 
 
@@ -43,12 +43,13 @@ def test_str_to_datetime():
 def test_dict_to_datetime():
     now = 1627801200000
     s = {"$date": now}
-    v = to_datetime(s)
+    tz = timezone.utc
+    v = to_datetime(s, tz)
     assert isinstance(v, datetime)
     assert v.year == 2021
     assert v.month == 8
     assert v.day == 1
-    assert v.hour == 7
+    assert v.hour == 0
     assert v.minute == 0
     assert v.second == 0
     assert v.microsecond == 0

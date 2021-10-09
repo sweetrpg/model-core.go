@@ -3,12 +3,12 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """Date conversion functions.
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from bson.timestamp import Timestamp
 import logging
 
 
-def to_datetime(value, attr=None, data=None, **kwargs):
+def to_datetime(value, tz=None, attr=None, data=None, **kwargs):
     """Deserializes a database value to a Python datetime.
     This function can be used as a callback for the Marshmallow :class:`fields.Function`
     field type.
@@ -41,7 +41,7 @@ def to_datetime(value, attr=None, data=None, **kwargs):
         value = value["$date"] / 1000
 
     logging.debug("value (converted?): %s", value)
-    return datetime.fromtimestamp(float(value))
+    return datetime.fromtimestamp(float(value), tz)
 
 
 def to_timestamp(value, attr=None, obj=None, **kwargs):
