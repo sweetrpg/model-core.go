@@ -6,6 +6,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 import logging
 import json
 from .date import to_datetime
+from sweetrpg_model_core.model.base import BaseModel
 
 
 def convert_document_property_value(value):
@@ -29,7 +30,7 @@ def convert_document_property_value(value):
     return value
 
 
-def to_model(doc, model_class):
+def to_model(doc, model_class) -> BaseModel:
     """Convert a database document to a model instance.
 
     :param Document doc: The input document to convert. This instance must have a to_json() function that returns
@@ -41,9 +42,9 @@ def to_model(doc, model_class):
     logging.debug("doc: %s, model_class: %s", doc, model_class)
     if not hasattr(doc, "to_json"):
         return None
-    j = doc.to_json()
-    logging.debug("j: %s", j)
-    data = j  # json.loads(j)
+    data = doc.to_json()
+    # logging.debug("j: %s", j)
+    # data = json.loads(j)
     logging.debug("data: %s", data)
     for k, v in data.items():
         data[k] = convert_document_property_value(v)

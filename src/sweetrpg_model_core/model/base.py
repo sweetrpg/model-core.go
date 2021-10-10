@@ -10,23 +10,10 @@ from sweetrpg_model_core.convert.date import to_datetime
 
 
 class BaseModel(object):
-    """A base model object which includes an 'id' property as well as
-    audit fields for created, updated, and deleted times.
+    """A base model with common methods for model types.
+
+    Do not subclass this; use `Model` or `EmbeddedModel` instead.
     """
-
-    def __init__(self, *args, **kwargs):
-        """Create a base model object."""
-        logging.debug("args: %s, kwargs: %s", args, kwargs)
-        now = datetime.utcnow()  # .isoformat()
-
-        self.id = kwargs.get("_id") or kwargs.get("id")
-        logging.debug("id: %s", self.id)
-        self.created_at = to_datetime(kwargs.get("created_at")) or now
-        logging.debug("created_at: %s", self.created_at)
-        self.updated_at = to_datetime(kwargs.get("updated_at")) or now
-        logging.debug("updated_at: %s", self.updated_at)
-        self.deleted_at = to_datetime(kwargs.get("deleted_at"))
-        logging.debug("deleted_at: %s", self.deleted_at)
 
     @recursive_repr()
     def __repr__(self):
@@ -53,7 +40,27 @@ class BaseModel(object):
         return d
 
 
-class EmbeddedModel(object):
+class Model(BaseModel):
+    """A model object which includes an 'id' property as well as
+    audit fields for created, updated, and deleted times.
+    """
+
+    def __init__(self, *args, **kwargs):
+        """Create a base model object."""
+        logging.debug("args: %s, kwargs: %s", args, kwargs)
+        now = datetime.utcnow()  # .isoformat()
+
+        self.id = kwargs.get("_id") or kwargs.get("id")
+        logging.debug("id: %s", self.id)
+        self.created_at = to_datetime(kwargs.get("created_at")) or now
+        logging.debug("created_at: %s", self.created_at)
+        self.updated_at = to_datetime(kwargs.get("updated_at")) or now
+        logging.debug("updated_at: %s", self.updated_at)
+        self.deleted_at = to_datetime(kwargs.get("deleted_at"))
+        logging.debug("deleted_at: %s", self.deleted_at)
+
+
+class EmbeddedModel(BaseModel):
     """An embedded model object, meant to be contained in another model object. It does not
     contain an identifier or audit fields.
     """
