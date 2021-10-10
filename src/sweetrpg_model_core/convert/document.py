@@ -43,8 +43,10 @@ def to_model(doc, model_class) -> BaseModel:
     if not hasattr(doc, "to_json"):
         return None
     data = doc.to_json()
-    # logging.debug("j: %s", j)
-    # data = json.loads(j)
+    logging.debug("data: %s", data)
+    if isinstance(data, str):
+        logging.debug("converting data from str to dict")
+        data = json.loads(data)
     logging.debug("data: %s", data)
     for k, v in data.items():
         data[k] = convert_document_property_value(v)
