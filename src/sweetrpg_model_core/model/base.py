@@ -54,10 +54,16 @@ class Model(BaseModel):
         logging.debug("id: %s", self.id)
         self.created_at = to_datetime(kwargs.get("created_at")) or now
         logging.debug("created_at: %s", self.created_at)
+        self.created_by = kwargs["created_by"]
+        logging.debug("created_by: %s", self.created_by)
         self.updated_at = to_datetime(kwargs.get("updated_at")) or now
         logging.debug("updated_at: %s", self.updated_at)
+        self.updated_by = kwargs["updated_by"]
+        logging.debug("updated_by: %s", self.updated_by)
         self.deleted_at = to_datetime(kwargs.get("deleted_at"))
         logging.debug("deleted_at: %s", self.deleted_at)
+        self.deleted_by = kwargs.get("deleted_by")
+        logging.debug("deleted_by: %s", self.deleted_by)
 
 
 class EmbeddedModel(BaseModel):
