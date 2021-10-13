@@ -35,13 +35,16 @@ class BaseSchema(Schema):
 
     @post_load
     def make_object(self, data, **kwargs):
-        logging.info("data: %s", data)
-        return self.model_class(**data)
+        logging.info("data: %s, kwargs: %s", data, kwargs)
+        return self.model_class(**kwargs)
 
     id = fields.Str()  # as_string=True, dump_only=True)
     created_at = fields.DateTime(required=True)
+    created_by = fields.String(required=True)
     updated_at = fields.DateTime(required=True)
+    updated_by = fields.String(required=True)
     deleted_at = fields.DateTime(allow_none=True)
+    deleted_by = fields.String(allow_none=True)
 
 
 class BaseEmbeddedSchema(Schema):
