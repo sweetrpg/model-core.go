@@ -36,7 +36,8 @@ class BaseSchema(Schema):
     @post_load
     def make_object(self, data, **kwargs):
         logging.info("data: %s, kwargs: %s", data, kwargs)
-        return self.model_class(**kwargs)
+        print(data)  # TODO: remove
+        return self.model_class(**data)
 
     id = fields.Str()  # as_string=True, dump_only=True)
     created_at = fields.DateTime(required=True)
