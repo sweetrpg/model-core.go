@@ -36,7 +36,7 @@ class BaseSchema(Schema):
     @post_load
     def make_object(self, data, **kwargs):
         logging.info("data: %s, kwargs: %s", data, kwargs)
-        print(data)  # TODO: remove
+        print(data, kwargs)  # TODO: remove
         return self.model_class(**data)
 
     id = fields.Str()  # as_string=True, dump_only=True)
