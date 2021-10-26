@@ -8,5 +8,5 @@ dnspython==1.16.0
     # via pymongo
 marshmallow==3.14.0
     # via -r requirements/pkg.in
-pymongo[srv,tls]==3.12
+pymongo[srv,tls]==3.12.1
     # via -r requirements/pkg.in
