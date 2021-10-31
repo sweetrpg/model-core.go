@@ -24,7 +24,7 @@ dnspython==1.16.0
     # via
     #   -r requirements/tests.in
     #   pymongo
-filelock==3.3.0
+filelock==3.3.2
     # via
     #   tox
     #   virtualenv
@@ -34,7 +34,7 @@ iniconfig==1.1.1
     # via pytest
 marshmallow==3.14.0
     # via -r requirements/pkg.in
-packaging==21.0
+packaging==21.2
     # via
     #   pytest
     #   tox
@@ -77,5 +77,5 @@ toml==0.10.2
     #   tox
 tox==3.24.4
     # via -r requirements/tests.in
-virtualenv==20.8.1
+virtualenv==20.9.0
     # via tox
