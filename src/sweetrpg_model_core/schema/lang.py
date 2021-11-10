@@ -7,5 +7,8 @@ from marshmallow.fields import Mapping
 
 
 class LangStringField(Mapping):
+    """
+
+    """
 
     mapping_type = dict
