@@ -86,7 +86,6 @@ jobs:
     notify:
         needs: [publish]
         runs-on: ubuntu-latest
-        concurrency: notify
         strategy:
             fail-fast: false
             matrix:

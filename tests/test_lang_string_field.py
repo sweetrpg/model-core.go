@@ -4,4 +4,4 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """
 
 def test_lang_string_field():
-    pass 
+    pass
