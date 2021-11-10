@@ -54,7 +54,7 @@ class BaseSchema(Schema):
 
 
 class BaseEmbeddedSchema(Schema):
-    """
+    """Base schema for embedded objects.
 
     """
 
