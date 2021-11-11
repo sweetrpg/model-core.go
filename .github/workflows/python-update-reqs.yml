@@ -2,7 +2,7 @@ name: Update Requirements
 
 on:
     repository_dispatch:
-        types: []
+        types: [none]
 
 jobs:
     update-reqs:
