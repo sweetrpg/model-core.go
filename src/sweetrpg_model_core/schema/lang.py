@@ -6,7 +6,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 from marshmallow.fields import Mapping
 
 
-class LangStringField(Mapping):
+class LangString(Mapping):
     """
 
     """
