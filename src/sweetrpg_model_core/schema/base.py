@@ -38,7 +38,7 @@ class BaseSchema(Schema):
         """Create a model object from the provided data.
 
         :param data: A dictionary of data to populate the model object.
-        :returns An instance of the `model_class`.
+        :returns: An instance of the `model_class`.
         """
         logging.info("data: %s, kwargs: %s", data, kwargs)
         print(data, kwargs)  # TODO: remove
