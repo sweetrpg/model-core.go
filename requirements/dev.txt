@@ -43,7 +43,7 @@ docutils==0.16
     #   rstcheck
     #   sphinx
     #   sphinx-tabs
-filelock==3.3.2
+filelock==3.4.0
     # via
     #   tox
     #   virtualenv
@@ -161,7 +161,7 @@ tomli==1.2.2
     #   pep517
 tox==3.24.4
     # via -r requirements/tests.in
-typing-extensions==3.10.0.2
+typing-extensions==4.0.0
     # via black
 urllib3==1.26.7
     # via requests
