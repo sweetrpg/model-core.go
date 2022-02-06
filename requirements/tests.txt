@@ -6,25 +6,23 @@
 #
 asgiref==3.5.0
     # via -r requirements/tests.in
-attrs==21.2.0
+attrs==21.4.0
     # via pytest
-backports.entry-points-selectable==1.1.1
-    # via virtualenv
 blinker==1.4
     # via -r requirements/tests.in
-coverage[toml]==5.5
+coverage[toml]==6.3.1
     # via
     #   coverage-badge
     #   pytest-cov
 coverage-badge==1.1.0
     # via -r requirements/tests.in
-distlib==0.3.3
+distlib==0.3.4
     # via virtualenv
 dnspython==2.2.0
     # via
     #   -r requirements/tests.in
     #   pymongo
-filelock==3.4.0
+filelock==3.4.2
     # via
     #   tox
     #   virtualenv
@@ -34,11 +32,11 @@ iniconfig==1.1.1
     # via pytest
 marshmallow==3.14.1
     # via -r requirements/pkg.in
-packaging==21.2
+packaging==21.3
     # via
     #   pytest
     #   tox
-platformdirs==2.4.0
+platformdirs==2.4.1
     # via virtualenv
 pluggy==1.0.0
     # via
@@ -50,9 +48,9 @@ py==1.11.0
     #   tox
 pymongo[srv,tls]==3.12.1
     # via -r requirements/pkg.in
-pyparsing==2.4.7
+pyparsing==3.0.7
     # via packaging
-pytest==6.2.5
+pytest==7.0.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -71,11 +69,13 @@ six==1.16.0
     #   tox
     #   virtualenv
 toml==0.10.2
+    # via tox
+tomli==2.0.0
     # via
     #   coverage
     #   pytest
     #   tox
 tox==3.24.5
     # via -r requirements/tests.in
-virtualenv==20.10.0
+virtualenv==20.13.1
     # via tox
