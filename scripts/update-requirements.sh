@@ -8,7 +8,7 @@ pushd ${scriptdir}/..
 
 for r in pkg dev docs tests; do
     echo "Requirement: $r"
-    pip-compile -r -U requirements/$r.in
+    $(pyenv which pip-compile) -r -U requirements/$r.in
 done
 
 popd
