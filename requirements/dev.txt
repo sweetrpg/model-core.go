@@ -91,11 +91,11 @@ pygments==2.11.2
     # via
     #   sphinx
     #   sphinx-tabs
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
-pytest==7.0.1
+pytest==7.1.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
