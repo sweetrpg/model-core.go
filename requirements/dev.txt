@@ -36,7 +36,7 @@ dnspython==2.2.1
     # via
     #   -r requirements/tests.in
     #   pymongo
-docutils==0.16
+docutils==0.17.1
     # via
     #   rstcheck
     #   sphinx
@@ -91,7 +91,7 @@ pygments==2.11.2
     # via
     #   sphinx
     #   sphinx-tabs
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
@@ -130,7 +130,7 @@ sphinx==4.4.0
     #   sphinxcontrib-log-cabinet
 sphinx-issues==3.0.1
     # via -r requirements/docs.in
-sphinx-tabs==3.2.0
+sphinx-tabs==3.3.0
     # via -r requirements/docs.in
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
