@@ -46,11 +46,11 @@ py==1.11.0
     # via
     #   pytest
     #   tox
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
-pytest==7.0.1
+pytest==7.1.1
     # via
     #   -r requirements/tests.in
     #   pytest-cov
