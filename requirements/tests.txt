@@ -46,7 +46,7 @@ py==1.11.0
     # via
     #   pytest
     #   tox
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
@@ -62,7 +62,7 @@ pytest-env==0.6.2
     # via -r requirements/tests.in
 pytest-ordering==0.6
     # via -r requirements/tests.in
-python-dotenv==0.19.2
+python-dotenv==0.20.0
     # via -r requirements/tests.in
 six==1.16.0
     # via
