@@ -91,7 +91,7 @@ pygments==2.11.2
     # via
     #   sphinx
     #   sphinx-tabs
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
@@ -121,7 +121,7 @@ six==1.16.0
     #   virtualenv
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==4.4.0
+sphinx==4.5.0
     # via
     #   -r requirements/docs.in
     #   pallets-sphinx-themes
