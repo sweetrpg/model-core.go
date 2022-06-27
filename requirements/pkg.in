@@ -1,2 +1,2 @@
-marshmallow==3.14.1
+marshmallow==3.17.0
 PyMongo[srv]==4.0.2
