@@ -6,7 +6,7 @@
 #
 alabaster==0.7.12
     # via sphinx
-asgiref==3.5.0
+asgiref==3.5.2
     # via -r requirements/tests.in
 attrs==21.4.0
     # via pytest
@@ -91,7 +91,7 @@ pygments==2.11.2
     # via
     #   sphinx
     #   sphinx-tabs
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
@@ -107,7 +107,7 @@ pytest-env==0.6.2
     # via -r requirements/tests.in
 pytest-ordering==0.6
     # via -r requirements/tests.in
-python-dotenv==0.19.2
+python-dotenv==0.20.0
     # via -r requirements/tests.in
 pytz==2021.3
     # via babel
@@ -121,7 +121,7 @@ six==1.16.0
     #   virtualenv
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==4.4.0
+sphinx==4.5.0
     # via
     #   -r requirements/docs.in
     #   pallets-sphinx-themes
