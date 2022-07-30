@@ -6,7 +6,11 @@
 #
 dnspython==2.2.1
     # via pymongo
-marshmallow==3.14.1
+marshmallow==3.17.0
     # via -r requirements/pkg.in
-pymongo[srv,tls]==3.12.1
+packaging==21.3
+    # via marshmallow
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
+pyparsing==3.0.9
+    # via packaging
