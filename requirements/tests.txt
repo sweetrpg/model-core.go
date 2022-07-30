@@ -4,11 +4,11 @@
 #
 #    pip-compile requirements/tests.in
 #
-asgiref==3.5.0
+asgiref==3.5.2
     # via -r requirements/tests.in
 attrs==21.4.0
     # via pytest
-blinker==1.4
+blinker==1.5
     # via -r requirements/tests.in
 coverage[toml]==6.3.1
     # via
@@ -30,10 +30,11 @@ greenlet==1.1.2
     # via -r requirements/tests.in
 iniconfig==1.1.1
     # via pytest
-marshmallow==3.14.1
+marshmallow==3.17.0
     # via -r requirements/pkg.in
 packaging==21.3
     # via
+    #   marshmallow
     #   pytest
     #   tox
 platformdirs==2.4.1
@@ -46,11 +47,11 @@ py==1.11.0
     # via
     #   pytest
     #   tox
-pymongo[srv,tls]==3.12.1
+pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
 pyparsing==3.0.7
     # via packaging
-pytest==7.0.1
+pytest==7.1.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -62,7 +63,7 @@ pytest-env==0.6.2
     # via -r requirements/tests.in
 pytest-ordering==0.6
     # via -r requirements/tests.in
-python-dotenv==0.19.2
+python-dotenv==0.20.0
     # via -r requirements/tests.in
 six==1.16.0
     # via
