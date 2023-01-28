@@ -4,13 +4,11 @@
 #
 #    pip-compile requirements/pkg.in
 #
-dnspython==2.2.1
+dnspython==2.3.0
     # via pymongo
 marshmallow==3.18.0
     # via -r requirements/pkg.in
-packaging==21.3
+packaging==23.0
     # via marshmallow
 pymongo[srv]==4.0.2
     # via -r requirements/pkg.in
-pyparsing==3.0.9
-    # via packaging
