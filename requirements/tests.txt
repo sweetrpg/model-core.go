@@ -32,7 +32,7 @@ greenlet==2.0.1
     # via -r requirements/tests.in
 iniconfig==2.0.0
     # via pytest
-marshmallow==3.18.0
+marshmallow==3.19.0
     # via -r requirements/pkg.in
 packaging==23.0
     # via
@@ -47,7 +47,7 @@ pluggy==1.0.0
     #   tox
 py==1.11.0
     # via tox
-pymongo[srv]==4.0.2
+pymongo[srv]==4.3.3
     # via -r requirements/pkg.in
 pytest==7.2.1
     # via
