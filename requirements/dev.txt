@@ -56,7 +56,7 @@ docutils==0.18.1
     #   sphinx-tabs
 exceptiongroup==1.1.0
     # via pytest
-filelock==3.9.0
+filelock==3.10.6
     # via
     #   tox
     #   virtualenv
@@ -92,7 +92,7 @@ pathspec==0.11.0
     # via black
 pip-tools==6.12.1
     # via -r requirements/dev.in
-platformdirs==2.6.2
+platformdirs==3.2.0
     # via
     #   black
     #   tox
@@ -110,7 +110,7 @@ pygments==2.14.0
     #   sphinx-tabs
 pymongo[srv]==4.3.3
     # via -r requirements/pkg.in
-pyproject-api==1.5.0
+pyproject-api==1.5.1
     # via tox
 pyproject-hooks==1.0.0
     # via build
@@ -176,7 +176,7 @@ tomli==2.0.1
     #   pyproject-hooks
     #   pytest
     #   tox
-tox==4.4.5
+tox==4.4.8
     # via -r requirements/tests.in
 typer[all]==0.7.0
     # via rstcheck
@@ -186,7 +186,7 @@ typing-extensions==4.4.0
     # via pydantic
 urllib3==1.26.14
     # via requests
-virtualenv==20.17.1
+virtualenv==20.21.0
     # via tox
 wheel==0.38.4
     # via pip-tools
