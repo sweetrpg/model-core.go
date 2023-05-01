@@ -30,7 +30,7 @@ dnspython==2.3.0
     #   pymongo
 exceptiongroup==1.1.0
     # via pytest
-filelock==3.9.0
+filelock==3.12.0
     # via
     #   tox
     #   virtualenv
@@ -40,13 +40,13 @@ iniconfig==2.0.0
     # via pytest
 marshmallow==3.19.0
     # via -r requirements/pkg.in
-packaging==23.0
+packaging==23.1
     # via
     #   marshmallow
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==2.6.2
+platformdirs==3.5.0
     # via
     #   tox
     #   virtualenv
@@ -56,7 +56,7 @@ pluggy==1.0.0
     #   tox
 pymongo[srv]==4.3.3
     # via -r requirements/pkg.in
-pyproject-api==1.5.0
+pyproject-api==1.5.1
     # via tox
 pytest==7.2.1
     # via
@@ -78,7 +78,7 @@ tomli==2.0.1
     #   pyproject-api
     #   pytest
     #   tox
-tox==4.4.5
+tox==4.5.1
     # via -r requirements/tests.in
-virtualenv==20.17.1
+virtualenv==20.23.0
     # via tox
