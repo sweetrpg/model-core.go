@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = "Paul Schifferer <dm@sweetrpg.com>"
-"""Root.
+"""
+Root.
 """
 
 __title__ = "SweetRPG Model Core"
