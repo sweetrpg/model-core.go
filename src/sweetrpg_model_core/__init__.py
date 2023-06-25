@@ -7,7 +7,7 @@ Root.
 __title__ = "SweetRPG Model Core"
 __description__ = "Base classes and utilities for model objects"
 __url__ = "https://github.com/sweetrpg/model-core"
-__version__ = "0.0.127"
+__version__ = "0.0.128"
 __build__ = 0x00005F
 __author_email__ = "dm@sweetrpg.com"
 __license__ = "MIT"
