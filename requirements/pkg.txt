@@ -10,5 +10,5 @@ marshmallow==3.19.0
     # via -r requirements/pkg.in
 packaging==23.1
     # via marshmallow
-pymongo[srv]==4.3.3
+pymongo[srv]==4.4.0
     # via -r requirements/pkg.in
