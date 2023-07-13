@@ -98,6 +98,7 @@ jobs:
                 include:
                     - repo: db
                     - repo: library-objects
+                    - repo: catalog-objects
                     - repo: api-core
                     - repo: library-api
                     - repo: web-core
