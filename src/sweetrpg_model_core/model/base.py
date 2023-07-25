@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = "Paul Schifferer <dm@sweetrpg.com>"
-"""Base objects for model and embedded model.
+"""
+Base objects for model and embedded model.
 """
 
 from reprlib import recursive_repr
