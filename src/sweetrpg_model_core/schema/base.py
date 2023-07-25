@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = "Paul Schifferer <dm@sweetrpg.com>"
-"""Base schema for model classes.
+"""
+Base schema for model classes.
 """
 
 from marshmallow import Schema, fields, EXCLUDE
@@ -54,17 +55,13 @@ class BaseSchema(Schema):
 
 
 class BaseEmbeddedSchema(Schema):
-    """Base schema for embedded objects.
-
-    """
+    """Base schema for embedded objects."""
 
     class Meta:
         unknown = EXCLUDE
 
     @post_load
     def make_object(self, data, **kwargs):
-        """
-
-        """
+        """ """
         logging.info("data: %s", data)
         return self.model_class(**data)

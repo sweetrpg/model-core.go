@@ -82,9 +82,9 @@ jobs:
               with:
                   fetch-depth: 0
             - name: publish
-              uses: relekang/python-semantic-release@master
+              uses: python-semantic-release/python-semantic-release@master
               with:
-                  additional_options: "--patch"
+                  additional_options: "--patch -vv"
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   repository_username: __token__
                   repository_password: ${{ secrets.PYPI_TOKEN }}
