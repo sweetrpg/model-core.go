@@ -96,7 +96,7 @@ jobs:
         runs-on: ubuntu-latest
         concurrency: publish
         environment:
-            name: pypi
+            name: release
             url: https://pypi.org/p/sweetrpg-model-core
         permissions:
             id-token: write
