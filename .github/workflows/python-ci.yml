@@ -73,15 +73,10 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./docs/_build/html
 
-    publish:
+    gh-publish:
         needs: [tests]
         runs-on: ubuntu-latest
         concurrency: publish
-        environment:
-            name: pypi
-            url: https://pypi.org/p/sweetrpg-model-core
-        permissions:
-            id-token: write
         steps:
             - uses: actions/checkout@v3
               with:
@@ -95,11 +90,25 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   #   repository_username: __token__
                   #   repository_password: ${{ secrets.PYPI_TOKEN }}
+
+    pypi-publish:
+        needs: [tests]
+        runs-on: ubuntu-latest
+        concurrency: publish
+        environment:
+            name: pypi
+            url: https://pypi.org/p/sweetrpg-model-core
+        permissions:
+            id-token: write
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
             - name: Publish to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
 
     notify:
-        needs: [publish]
+        needs: [gh-publish]
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
@@ -108,13 +117,13 @@ jobs:
                     - repo: db
                     - repo: library-objects
                     - repo: catalog-objects
-                    - repo: api-core
-                    - repo: library-api
-                    - repo: web-core
-                    - repo: client
-                    - repo: library-web
-                    - repo: main-web
-                    - repo: shared-web
+                    # - repo: api-core
+                    # - repo: library-api
+                    # - repo: web-core
+                    # - repo: client
+                    # - repo: library-web
+                    # - repo: main-web
+                    # - repo: shared-web
         steps:
             - uses: juztcode/repo-ditpatch-action@v1
               with:
