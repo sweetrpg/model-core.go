@@ -2,6 +2,15 @@
 
 
 
+## v0.0.134 (2023-07-25)
+
+### Unknown
+
+* Separate GH and PyPI publish ([`a36b79a`](https://github.com/sweetrpg/model-core/commit/a36b79a98c7d22fe398aa9c7f662f13b8e5f2f71))
+
+* Update publish workflow ([`188854d`](https://github.com/sweetrpg/model-core/commit/188854dc863904f51fcdcb54381feeaf281b305d))
+
+
 ## v0.0.133 (2023-07-25)
 
 ### Unknown
