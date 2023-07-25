@@ -77,19 +77,26 @@ jobs:
         needs: [tests]
         runs-on: ubuntu-latest
         concurrency: publish
+        environment:
+            name: pypi
+            url: https://pypi.org/p/sweetrpg-model-core
+        permissions:
+            id-token: write
         steps:
             - uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-            - name: publish
+            - name: Publish to GitHub
               uses: python-semantic-release/python-semantic-release@master
               with:
                   force: "patch"
                   push: "true"
-                  additional_options: "-vv"
+                  #   additional_options: "-vv"
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  repository_username: __token__
-                  repository_password: ${{ secrets.PYPI_TOKEN }}
+                  #   repository_username: __token__
+                  #   repository_password: ${{ secrets.PYPI_TOKEN }}
+            - name: Publish to PyPI
+              uses: pypa/gh-action-pypi-publish@release/v1
 
     notify:
         needs: [publish]

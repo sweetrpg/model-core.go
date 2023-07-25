@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = "Paul Schifferer <dm@sweetrpg.com>"
-"""Date conversion functions.
+"""
+Date conversion functions.
 """
 
 from datetime import datetime, timezone
