@@ -32,7 +32,8 @@
   <h1>Source code for sweetrpg_model_core.schema.base</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Paul Schifferer &lt;dm@sweetrpg.com&gt;&quot;</span>
-<span class="sd">&quot;&quot;&quot;Base schema for model classes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Base schema for model classes.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">marshmallow</span> <span class="kn">import</span> <span class="n">Schema</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">EXCLUDE</span>
@@ -86,18 +87,14 @@
 
 
 <span class="k">class</span> <span class="nc">BaseEmbeddedSchema</span><span class="p">(</span><span class="n">Schema</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base schema for embedded objects.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base schema for embedded objects.&quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">unknown</span> <span class="o">=</span> <span class="n">EXCLUDE</span>
 
     <span class="nd">@post_load</span>
     <span class="k">def</span> <span class="nf">make_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;data: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_class</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
