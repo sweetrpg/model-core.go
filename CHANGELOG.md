@@ -2,6 +2,13 @@
 
 
 
+## v0.0.133 (2023-07-25)
+
+### Unknown
+
+* Try for PyPI again ([`597243a`](https://github.com/sweetrpg/model-core/commit/597243a8a71d00daa1283f566709de18fdf24b53))
+
+
 ## v0.0.132 (2023-07-25)
 
 ### Unknown
