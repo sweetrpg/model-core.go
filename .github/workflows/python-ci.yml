@@ -86,7 +86,7 @@ jobs:
               with:
                 #   force: "patch"
                 #   push: "true"
-                additional_options: "--patch -vv"
+                additional_options: "--patch"
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 repository_username: __token__
                 repository_password: ${{ secrets.PYPI_TOKEN }}

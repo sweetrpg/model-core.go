@@ -8,6 +8,7 @@ import logging
 import json
 from .date import to_datetime
 from sweetrpg_model_core.model.base import BaseModel
+from typing import Optional
 
 
 def convert_document_property_value(value):
@@ -31,7 +32,7 @@ def convert_document_property_value(value):
     return value
 
 
-def to_model(doc, model_class) -> BaseModel:
+def to_model(doc, model_class) -> Optional[BaseModel]:
     """Convert a database document to a model instance.
 
     :param Document doc: The input document to convert. This instance must have a to_json() function
