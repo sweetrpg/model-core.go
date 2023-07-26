@@ -42,7 +42,7 @@ jobs:
                   python -m pip install -U pip
             - name: get-pip-cache-dir
               id: pip-cache
-              run: echo "::set-output name=dir::$(pip cache dir)"
+              run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
             - name: cache-pip
               uses: actions/cache@v3
               with:
@@ -84,28 +84,10 @@ jobs:
             - name: Publish
               uses: relekang/python-semantic-release@v7.34.6
               with:
-                #   force: "patch"
-                #   push: "true"
                 additional_options: "--patch"
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 repository_username: __token__
                 repository_password: ${{ secrets.PYPI_TOKEN }}
-
-    # pypi-publish:
-    #     needs: [tests]
-    #     runs-on: ubuntu-latest
-    #     concurrency: publish
-    #     environment:
-    #         name: release
-    #         url: https://pypi.org/p/sweetrpg-model-core
-    #     permissions:
-    #         id-token: write
-    #     steps:
-    #         - uses: actions/checkout@v3
-    #           with:
-    #               fetch-depth: 0
-    #         - name: Publish to PyPI
-    #           uses: pypa/gh-action-pypi-publish@release/v1
 
     notify:
         needs: [publish]
