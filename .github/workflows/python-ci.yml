@@ -82,14 +82,14 @@ jobs:
               with:
                   fetch-depth: 0
             - name: Publish to GitHub
-              uses: python-semantic-release/python-semantic-release@master
+              uses: relekang/python-semantic-release@7.34.6
               with:
-                  force: "patch"
-                  push: "true"
-                  #   additional_options: "-vv"
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  #   repository_username: __token__
-                  #   repository_password: ${{ secrets.PYPI_TOKEN }}
+                #   force: "patch"
+                #   push: "true"
+                additional_options: "--patch -vv"
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                repository_username: __token__
+                repository_password: ${{ secrets.PYPI_TOKEN }}
 
     pypi-publish:
         needs: [tests]
