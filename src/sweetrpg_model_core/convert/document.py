@@ -34,8 +34,8 @@ def convert_document_property_value(value):
 def to_model(doc, model_class) -> BaseModel:
     """Convert a database document to a model instance.
 
-    :param Document doc: The input document to convert. This instance must have a to_json() function that returns
-        a dictionary of the document data.
+    :param Document doc: The input document to convert. This instance must have a to_json() function
+        that returns a dictionary of the document data.
     :param class model_class: The type of model class to convert to. This class must accept kwargs
         in its initializer.
     :returns: An instance of the model class, initialized with the document data.
