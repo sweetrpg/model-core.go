@@ -124,7 +124,7 @@ pytest==7.4.2
     #   pytest-ordering
 pytest-cov==4.1.0
     # via -r requirements/tests.in
-pytest-env==0.8.2
+pytest-env==1.0.1
     # via -r requirements/tests.in
 pytest-ordering==0.6
     # via -r requirements/tests.in
@@ -142,7 +142,7 @@ shellingham==1.5.3
     # via typer
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==6.2.1
+sphinx==7.2.6
     # via
     #   -r requirements/docs.in
     #   pallets-sphinx-themes
