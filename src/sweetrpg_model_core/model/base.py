@@ -41,6 +41,19 @@ class BaseModel(object):
         return d
 
 
+class SimpleModel(BaseModel):
+    """
+    A simple model object which includes an 'id' property.
+    """
+
+    def __init__(self, *args, **kwargs):
+        """Create a simple model object."""
+        logging.debug("args: %s, kwargs: %s", args, kwargs)
+
+        self.id = kwargs.get("_id") or kwargs.get("id")
+        logging.debug("id: %s", self.id)
+
+
 class Model(BaseModel):
     """A model object which includes an 'id' property as well as
     audit fields for created, updated, and deleted times.
