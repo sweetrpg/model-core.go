@@ -28,17 +28,21 @@ def to_datetime(value, tz=None, attr=None, data=None, **kwargs):
         logging.debug("to_datetime: None")
         return None
     elif isinstance(value, Timestamp):
-        logging.debug("to_datetime: Timestamp")
+        logging.debug("to_datetime: Timestamp: %s", value)
         value = value.as_datetime().timestamp()
     elif isinstance(value, datetime):
-        logging.debug("to_datetime: datetime")
+        logging.debug("to_datetime: datetime: %s", value)
         return value
     elif isinstance(value, str):
-        logging.debug("to_datetime: str")
+        logging.debug("to_datetime: str: %s", value)
         value = datetime.fromisoformat(value)
         return value
     elif isinstance(value, dict):
-        logging.debug("to_datetime: dict")
+        logging.debug("to_datetime: dict: %s", value)
+        if isinstance(value["$date"], str):
+            logging.debug("to_datetime: value[$date]: %s", value["$date"])
+            value = datetime.fromisoformat(value["$date"])
+            return value
         value = value["$date"] / 1000
 
     logging.debug("value (converted?): %s", value)

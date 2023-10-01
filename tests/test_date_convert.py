@@ -40,7 +40,7 @@ def test_str_to_datetime():
     assert v.microsecond == 4000
 
 
-def test_dict_to_datetime():
+def test_dict_int_to_datetime():
     now = 1627801200000
     s = {"$date": now}
     tz = timezone.utc
@@ -53,6 +53,20 @@ def test_dict_to_datetime():
     assert v.minute == 0
     assert v.second == 0
     assert v.microsecond == 0
+
+
+def test_dict_str_to_datetime():
+    s = {"$date": "2023-09-30T01:02:03.004Z"}
+    tz = timezone.utc
+    v = to_datetime(s, tz)
+    assert isinstance(v, datetime)
+    assert v.year == 2023
+    assert v.month == 9
+    assert v.day == 30
+    assert v.hour == 1
+    assert v.minute == 2
+    assert v.second == 3
+    assert v.microsecond == 4
 
 
 def test_float_to_datetime():
