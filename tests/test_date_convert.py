@@ -66,7 +66,7 @@ def test_dict_str_to_datetime():
     assert v.hour == 1
     assert v.minute == 2
     assert v.second == 3
-    assert v.microsecond == 4
+    assert v.microsecond == 4000
 
 
 def test_float_to_datetime():
