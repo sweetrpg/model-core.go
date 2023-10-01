@@ -56,7 +56,7 @@ def test_dict_int_to_datetime():
 
 
 def test_dict_str_to_datetime():
-    s = {"$date": "2023-09-30T01:02:03.004Z"}
+    s = {"$date": "2023-09-30T01:02:03.004"}
     tz = timezone.utc
     v = to_datetime(s, tz)
     assert isinstance(v, datetime)
