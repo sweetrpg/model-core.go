@@ -41,7 +41,10 @@ def to_datetime(value, tz=None, attr=None, data=None, **kwargs):
         logging.debug("to_datetime: dict: %s", value)
         if isinstance(value["$date"], str):
             logging.debug("to_datetime: value[$date]: %s", value["$date"])
-            value = datetime.fromisoformat(value["$date"])
+            try:
+                value = datetime.fromisoformat(value["$date"])
+            except ValueError:
+                value = datetime.strptime(value["$date"], "%Y-%M-%dT%H:%M:%S.%fZ")
             return value
         value = value["$date"] / 1000
 
