@@ -1,11 +1,14 @@
 name: CI
 
+concurrency: ci
+
 on:
     push:
         branches: [rust]
         paths:
             - "src/**"
             - "examples/**"
+            - "benches/**"
             - "tests/**"
             - Cargo.toml
     workflow_run:
