@@ -1,4 +1,6 @@
-name: CI
+name: ci
+
+concurrency: python-ci
 
 on:
     push:
@@ -12,7 +14,7 @@ on:
             - "requirements/*.txt"
             - "docs/**"
     workflow_run:
-        workflows: ["Update Requirements"]
+        workflows: ["update-python-reqs"]
         types: [completed]
 
 jobs:
@@ -25,7 +27,7 @@ jobs:
             matrix:
                 include:
                     - {
-                          name: Linux,
+                          name: linux,
                           python: "3.11",
                           os: ubuntu-latest,
                           tox: py311,
@@ -72,6 +74,7 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./docs/_build/html
+                  destination_dir: python
 
     publish:
         needs: [tests]
@@ -81,7 +84,7 @@ jobs:
             - uses: actions/checkout@v3
               with:
                   fetch-depth: 0
-            - name: Publish
+            - name: publish
               uses: relekang/python-semantic-release@v7.34.6
               with:
                 additional_options: "--patch"

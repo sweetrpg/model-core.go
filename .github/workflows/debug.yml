@@ -1,4 +1,4 @@
-name: Debug
+name: debug
 
 on:
     create:
@@ -16,40 +16,40 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
+      - name: dump-job-context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
+      - name: dump-steps-context
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
+      - name: dump-runner-context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
+      - name: dump-strategy-context
         env:
           STRATEGY_CONTEXT: ${{ toJson(strategy) }}
         run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
+      - name: dump-matrix-context
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: 'Get Previous tag'
+      - name: get-previous-tag
         id: previoustag
         uses: actions-ecosystem/action-get-latest-tag@v1
         with:
           semver_only: true
           initial_version: v0.0.0
           with_initial_version: true
-      - name: Docker meta
+      - name: docker-meta
         id: meta
         uses: docker/metadata-action@v3
         with:

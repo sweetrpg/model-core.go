@@ -1,4 +1,4 @@
-name: PR
+name: pr
 
 on:
     pull_request:
@@ -21,7 +21,7 @@ jobs:
             matrix:
                 include:
                     - {
-                          name: Linux,
+                          name: linux,
                           python: "3.11",
                           os: ubuntu-latest,
                           tox: py311,
