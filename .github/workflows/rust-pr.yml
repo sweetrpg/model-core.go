@@ -1,4 +1,4 @@
-name: PR
+name: pr
 
 on:
     pull_request:
@@ -14,7 +14,7 @@ env:
 
 jobs:
     tests:
-        name: Linux
+        name: linux
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
@@ -36,4 +36,4 @@ jobs:
             - name: coverage
               uses: paambaati/codeclimate-action@v5.0.0
               env:
-                CC_TEST_REPORTER_ID: XXX
+                CC_TEST_REPORTER_ID: 7b6f344f23d6c8daa4dea785e0cd44d1b70914efb24cb7fe364356f014e88526
