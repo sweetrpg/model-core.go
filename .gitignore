@@ -125,3 +125,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .DS_Store
+
+
+# Added by cargo
+
+/target
+/Cargo.lock

@@ -1,0 +1,88 @@
+name: CI
+
+on:
+    push:
+        branches: [rust]
+        paths:
+            - "src/**"
+            - "examples/**"
+            - "tests/**"
+            - Cargo.toml
+    workflow_run:
+        workflows: ["Update Requirements"]
+        types: [completed]
+
+env:
+    CARGO_TERM_COLOR: always
+
+jobs:
+    tests:
+        name: Linux
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                toolchain:
+                    - stable
+                    - beta
+                    - nightly
+        steps:
+            - uses: actions/checkout@v3
+            - name: install-toolchain
+              run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+            - name: build
+              run: cargo build --verbose
+            - name: lint
+              run: cargo check --verbose
+            - name: tests
+              run: cargo test --verbose
+
+    docs:
+        needs: [tests]
+        runs-on: ubuntu-latest
+        concurrency: docs
+        steps:
+            - uses: actions/checkout@v3
+            - name: install-toolchain
+              run: rustup update stable && rustup default stable
+            - name: make-docs
+              run: cargo doc --verbose
+            - name: publish-docs
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./docs/_build/html
+
+    publish:
+        needs: [tests]
+        runs-on: ubuntu-latest
+        concurrency: publish
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            # - name: Publish
+            #   uses: relekang/python-semantic-release@v7.34.6
+            #   with:
+            #       additional_options: "--patch"
+            #       github_token: ${{ secrets.GITHUB_TOKEN }}
+            #       repository_username: __token__
+            #       repository_password: ${{ secrets.PYPI_TOKEN }}
+
+    notify:
+        needs: [publish]
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - repo: db
+                    - repo: library-objects
+                    - repo: catalog-objects
+                    - repo: kv-objects
+        steps:
+            - uses: juztcode/repo-ditpatch-action@v1
+              with:
+                  event-type: model-core-published
+                  token: ${{ secrets.REPO_ACCESS_TOKEN }}
+                  repository: sweetrpg/${{ matrix.repo }}
