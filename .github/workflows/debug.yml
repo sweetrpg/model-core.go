@@ -1,9 +1,9 @@
-name: debug
+name: Debug
 
 on:
-    create:
-        tags:
-            - '*'
+    # create:
+    #     tags:
+    #         - '*'
     release:
         types:
             - published
