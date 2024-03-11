@@ -90,7 +90,7 @@ pallets-sphinx-themes==2.1.1
     # via -r requirements/docs.in
 pathspec==0.12.1
     # via black
-pip-tools==7.4.0
+pip-tools==7.4.1
     # via -r requirements/dev.in
 platformdirs==4.2.0
     # via
