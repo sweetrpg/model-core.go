@@ -97,7 +97,7 @@ platformdirs==4.2.0
     #   black
     #   tox
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   pytest
     #   tox
@@ -120,7 +120,7 @@ pyproject-hooks==1.0.0
     # via
     #   build
     #   pip-tools
-pytest==7.4.4
+pytest==8.2.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -185,9 +185,7 @@ tomli==2.0.1
 tox==4.13.0
     # via -r requirements/tests.in
 typer[all]==0.9.0
-    # via
-    #   rstcheck
-    #   typer
+    # via rstcheck
 typing-extensions==4.10.0
     # via
     #   asgiref
