@@ -4,13 +4,11 @@
 #
 #    pip-compile requirements/pkg.in
 #
-dnspython==2.6.1
+dnspython==2.7.0
     # via pymongo
-marshmallow==3.21.1
+marshmallow==3.22.0
     # via -r requirements/pkg.in
-packaging==23.2
+packaging==24.1
     # via marshmallow
-pymongo[srv]==4.6.2
-    # via
-    #   -r requirements/pkg.in
-    #   pymongo
+pymongo==4.10.1
+    # via -r requirements/pkg.in
