@@ -5,7 +5,7 @@ setup(
     name="sweetrpg-model-core",
     install_requires=[
         "marshmallow~=3.0",
-        "PyMongo[srv]~=3.0"
+        "PyMongo[srv]>=3,<5"
     ],
     extras_require={},
 )
