@@ -76,7 +76,18 @@ jobs:
               swift --version
       - name: Generate docs
         run: |
-              swift package generate-documentation
+              swift package --allow-writing-to-directory docs \
+                generate-documentation \
+                --disable-indexing \
+                --transform-for-static-hosting \
+                --hosting-base-path model-core \
+                --output-path docs
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./docs
+            destination_dir: swift
 
   publish:
     needs: [tests]
