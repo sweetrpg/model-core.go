@@ -5,8 +5,8 @@ on:
   push:
     branches: [ "feature/swift" ]
     paths:
-      - Sources
-      - Tests
+      - Sources/**
+      - Tests/**
       - Package.swift
 
 jobs:
