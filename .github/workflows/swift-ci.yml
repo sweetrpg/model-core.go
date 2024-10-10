@@ -1,6 +1,8 @@
 
 name: Swift CI
 
+concurrency: swift-ci
+
 on:
   push:
     branches: [ "feature/swift" ]
@@ -15,7 +17,6 @@ jobs:
   tests:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
-    concurrency: swift-ci
     strategy:
       fail-fast: false
       matrix:
