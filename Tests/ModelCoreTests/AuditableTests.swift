@@ -1,5 +1,5 @@
 import XCTest
-@testable import Auditable
+@testable import ModelCore
 
 final class AuditiableTests: XCTestCase {
     func testExample() throws {
