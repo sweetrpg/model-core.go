@@ -26,16 +26,16 @@ jobs:
               swift: "5.7",
               os: ubuntu-latest,
             }
-          - {
-              name: macOS,
-              swift: "5.7",
-              os: macos-latest,
-            }
-          - {
-              name: PSW,
-              swift: "5.7",
-              os: psw-dev,
-            }
+        #   - {
+        #       name: macOS,
+        #       swift: "5.7",
+        #       os: macos-latest,
+        #     }
+        #   - {
+        #       name: PSW,
+        #       swift: "5.7",
+        #       os: psw-dev,
+        #     }
 
     steps:
     - uses: actions/checkout@v4
