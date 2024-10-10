@@ -1,4 +1,4 @@
-name: Update Requirements
+name: Update Python Requirements
 
 on:
     workflow_dispatch:

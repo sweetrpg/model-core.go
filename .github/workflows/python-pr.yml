@@ -1,4 +1,4 @@
-name: Pull Request
+name: Python PR
 
 on:
     pull_request:
