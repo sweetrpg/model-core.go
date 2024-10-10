@@ -1,11 +1,11 @@
 import XCTest
-@testable import ModelCore
+@testable import Auditable
 
-final class ModelCoreTests: XCTestCase {
+final class AuditiableTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(ModelCore().text, "Hello, World!")
+        // XCTAssertEqual(ModelCore().text, "Hello, World!")
     }
 }
