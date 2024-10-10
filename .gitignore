@@ -128,3 +128,4 @@ dmypy.json
 Cargo.lock
 
 .build/
+.vscode/settings.json

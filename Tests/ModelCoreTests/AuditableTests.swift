@@ -3,7 +3,14 @@ import Foundation
 @testable import ModelCore
 
 final class AuditiableTests: XCTestCase {
-    struct TestAuditable : Auditable {}
+    struct TestAuditable : Auditable {
+        var createdAt : Date
+        var createdBy : String
+        var updatedAt : Date
+        var updatedBy : String
+        var deletedAt : Date?
+        var deletedBy : String?
+    }
 
     func testAuditable() throws {
         // This is an example of a functional test case.
