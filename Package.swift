@@ -10,6 +10,9 @@ let package = Package(
             name: "ModelCore",
             targets: ["ModelCore"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
+    ],
     targets: [
         .target(
             name: "ModelCore",
@@ -17,8 +20,5 @@ let package = Package(
         .testTarget(
             name: "ModelCoreTests",
             dependencies: ["ModelCore"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ]
 )
