@@ -8,6 +8,7 @@ on:
       - Sources/**
       - Tests/**
       - Package.swift
+  workflow_dispatch:
 
 jobs:
 
