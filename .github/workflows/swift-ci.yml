@@ -76,7 +76,7 @@ jobs:
               swift --version
       - name: Generate docs
         run: |
-              swift package generate-documentation -v
+              swift package generate-documentation
 
   publish:
     needs: [tests]
