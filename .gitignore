@@ -129,3 +129,4 @@ Cargo.lock
 
 .build/
 .vscode/settings.json
+Package.resolved

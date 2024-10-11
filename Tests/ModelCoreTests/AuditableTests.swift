@@ -5,11 +5,11 @@ import Foundation
 final class AuditiableTests: XCTestCase {
     struct TestAuditable : Auditable {
         var createdAt : Date
-        var createdBy : String
+        var createdBy : URL
         var updatedAt : Date
-        var updatedBy : String
+        var updatedBy : URL
         var deletedAt : Date?
-        var deletedBy : String?
+        var deletedBy : URL?
     }
 
     func testAuditable() throws {
@@ -18,8 +18,8 @@ final class AuditiableTests: XCTestCase {
         // results.
         // XCTAssertEqual(ModelCore().text, "Hello, World!")
         let now = Date()
-        let user = "tester"
-        var auditable = TestAuditable(createdAt: now, createdBy: user,
+        let user = URL(string: "tester")!
+        let auditable = TestAuditable(createdAt: now, createdBy: user,
                                       updatedAt: now, updatedBy: user)
 
         XCTAssertNotNil(auditable)
