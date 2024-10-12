@@ -57,7 +57,7 @@ jobs:
 
   docs:
     needs: [tests]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     concurrency: docs
     steps:
       - uses: actions/checkout@v4
@@ -66,9 +66,10 @@ jobs:
         run: |
               v=$(cat .swift-version)
               echo "swift_version=$v" >> $GITHUB_OUTPUT
-      - uses: swift-actions/setup-swift@v2
+      - uses: slashmo/install-swift@v0.1.0 # swift-actions/setup-swift@v2
         with:
-          swift-version: ${{ steps.get_swift_version.outputs.swift_version }}
+          # swift-version: ${{ steps.get_swift_version.outputs.swift_version }}
+          version: ${{ steps.get_swift_version.outputs.swift_version }}
       - name: Verify swift version
         run: |
               swift --version
