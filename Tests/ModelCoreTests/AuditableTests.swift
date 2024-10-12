@@ -1,8 +1,9 @@
-import XCTest
+import Testing
 import Foundation
 @testable import ModelCore
 
-final class AuditiableTests: XCTestCase {
+@Suite("Test Auditable struct", .serialized)
+struct AuditiableTests {
     struct TestAuditable : Auditable {
         var createdAt : Date
         var createdBy : URL
@@ -12,22 +13,19 @@ final class AuditiableTests: XCTestCase {
         var deletedBy : URL?
     }
 
-    func testAuditable() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        // XCTAssertEqual(ModelCore().text, "Hello, World!")
+    @Test("Test properties")
+    func testProperties() async throws {
         let now = Date()
         let user = URL(string: "tester")!
         let auditable = TestAuditable(createdAt: now, createdBy: user,
                                       updatedAt: now, updatedBy: user)
 
-        XCTAssertNotNil(auditable)
-        XCTAssertEqual(auditable.createdAt, now)
-        XCTAssertEqual(auditable.createdBy, user)
-        XCTAssertEqual(auditable.updatedAt, now)
-        XCTAssertEqual(auditable.updatedBy, user)
-        XCTAssertNil(auditable.deletedAt)
-        XCTAssertNil(auditable.deletedBy)
+        #expect(auditable != nil)
+        #expect(auditable.createdAt == now)
+        #expect(auditable.createdBy == user)
+        #expect(auditable.updatedAt == now)
+        #expect(auditable.updatedBy == user)
+        #expect(auditable.deletedAt == nil)
+        #expect(auditable.deletedBy == nil)
     }
 }
