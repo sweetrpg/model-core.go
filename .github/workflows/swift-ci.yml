@@ -107,7 +107,6 @@ jobs:
           - repo: catalog-objects
           - repo: library-objects
           - repo: kv-objects
-          - repo: client
     steps:
       - name: Notify
         uses: juztcode/repo-ditpatch-action@v1
