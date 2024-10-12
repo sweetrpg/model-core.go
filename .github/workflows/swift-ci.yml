@@ -23,7 +23,7 @@ jobs:
         include:
           - {
               name: Linux,
-              os: ubuntu-latest,
+              os: ubuntu-24.04,
             }
           # - {
           #     name: macOS,
