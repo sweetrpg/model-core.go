@@ -1,5 +1,6 @@
 package models
 
+// Property embedded model
 type Property struct {
 	Name  string `json:"name" jsonapi:"attr,name"`
 	Kind  string `json:"kind" jsonapi:"attr,kind"`
