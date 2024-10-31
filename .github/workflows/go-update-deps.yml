@@ -28,7 +28,7 @@ jobs:
               uses: actions/setup-go@v5
               with:
                 go-version-file: go.mod
-            - name: Build
+            - name: Update dependencies
               run: |
                     git config --global user.email "ci@sweetrpg.com"
                     git config --global user.name "SweetRPG Depedency Updater"
@@ -38,5 +38,5 @@ jobs:
                     go mod tidy
 
                     go add go.mod go.sum
-                    git commit -m "Update requirements"
+                    git commit -m "Update dependencies"
                     git push origin
