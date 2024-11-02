@@ -128,6 +128,7 @@ jobs:
                     - repo: web-core
         steps:
             - uses: juztcode/repo-ditpatch-action@v1
+              continue-on-error: true
               with:
                 event-type: model-core-published
                 token: ${{ secrets.REPO_ACCESS_TOKEN }}

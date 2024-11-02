@@ -31,7 +31,7 @@ jobs:
             - name: Update dependencies
               run: |
                     git config --global user.email "ci@sweetrpg.com"
-                    git config --global user.name "SweetRPG Depedency Updater"
+                    git config --global user.name "SweetRPG Dependency Updater"
                     git checkout ${{ github.head_ref || github.ref_name }}
 
                     go get -u ./...
