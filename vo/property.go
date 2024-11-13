@@ -1,8 +1,8 @@
 package vo
 
 import (
-	"github.com/sweetrpg/common/util"
-	"github.com/sweetrpg/model-core/models"
+	"github.com/sweetrpg/common.go/util"
+	"github.com/sweetrpg/model-core.go/models"
 )
 
 type PropertyVO struct {
