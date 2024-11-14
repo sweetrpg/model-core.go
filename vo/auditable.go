@@ -1,7 +1,9 @@
+// VO package
 package vo
 
 import "time"
 
+// Auditable value object.
 type AuditableVO struct {
 	CreatedAt time.Time  `bson:"created_at" json:"created_at" jsonapi:"attr,created_at"`
 	CreatedBy string     `bson:"created_by" json:"created_by" jsonapi:"attr,created_by"`
