@@ -1,5 +1,5 @@
 module github.com/sweetrpg/model-core.go
 
-go 1.23.2
+go 1.24.2
 
-require github.com/sweetrpg/common.go v0.0.9
+require github.com/sweetrpg/common.go v0.0.10
