@@ -1,7 +1,9 @@
+// Model package
 package models
 
 import "time"
 
+// Base auditable model
 type Auditable struct {
 	CreatedAt time.Time  `bson:"created_at" json:"created_at" jsonapi:"attr,created_at"`
 	CreatedBy string     `bson:"created_by" json:"created_by" jsonapi:"attr,created_by"`
