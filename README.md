@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/sweetrpg/model-core.go.svg)](https://img.shields.io/github/license/sweetrpg/model-core.go.svg)
 [![Issues](https://img.shields.io/github/issues/sweetrpg/model-core.go.svg)](https://img.shields.io/github/issues/sweetrpg/model-core.go.svg)
 [![PRs](https://img.shields.io/github/issues-pr/sweetrpg/model-core.go.svg)](https://img.shields.io/github/issues-pr/sweetrpg/model-core.go.svg)
-[![Dependabot](https://badgen.net/github/dependabot/sweetrpg/model-core)](https://badgen.net/github/dependabot/sweetrpg/model-core)
+[![Dependabot](https://badgen.net/github/dependabot/sweetrpg/model-core.go)](https://badgen.net/github/dependabot/sweetrpg/model-core.go)
 
 Common data types for model and object packages.
 
