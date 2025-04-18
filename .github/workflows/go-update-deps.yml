@@ -1,6 +1,6 @@
 name: Update Dependencies
 
-concurrency: deps-${{ github.ref }}
+concurrency: deps
 
 on:
     workflow_dispatch:
@@ -9,11 +9,10 @@ on:
     repository_dispatch:
         types:
             - common-published
-            - db-published
 
 jobs:
     tests:
-        name: ${{ matrix.name }}
+        name: Update dependencies for ${{ matrix.name }}
         runs-on: ${{ matrix.os }}
         strategy:
             fail-fast: false
