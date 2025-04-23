@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>vo: Go Coverage Report</title>
+		<title>util: Go Coverage Report</title>
 		<style>
 			body {
 				background: black;
@@ -55,9 +55,9 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">github.com/sweetrpg/model-core.go/vo/property.go (0.0%)</option>
+				<option value="file0">github.com/sweetrpg/model-core.go/util/property.go (0.0%)</option>
 				
-				<option value="file1">github.com/sweetrpg/model-core.go/vo/tag.go (0.0%)</option>
+				<option value="file1">github.com/sweetrpg/model-core.go/util/tag.go (100.0%)</option>
 				
 				</select>
 			</div>
@@ -71,52 +71,66 @@
 		</div>
 		<div id="content">
 		
-		<pre class="file" id="file0" style="display: none">package vo
+		<pre class="file" id="file0" style="display: none">package util
 
 import (
         "github.com/sweetrpg/common.go/util"
         "github.com/sweetrpg/model-core.go/models"
+        "github.com/sweetrpg/model-core.go/vo"
 )
 
-type PropertyVO struct {
-        Name  string `json:"name" jsonapi:"attr,name"`
-        Kind  string `json:"kind" jsonapi:"attr,kind"`
-        Value string `json:"value" jsonapi:"attr,value"`
-}
-
-func FromPropertyModels(models []models.Property) []PropertyVO <span class="cov0" title="0">{
+func FromPropertyModels(models []models.Property) []vo.PropertyVO <span class="cov0" title="0">{
         return util.Map(models, FromPropertyModel)
 }</span>
 
-func FromPropertyModel(model models.Property) *PropertyVO <span class="cov0" title="0">{
-        return &amp;PropertyVO{
+func FromPropertyModel(model models.Property) *vo.PropertyVO <span class="cov0" title="0">{
+        return &amp;vo.PropertyVO{
                 Name:  model.Name,
                 Kind:  model.Kind,
                 Value: model.Value,
         }
 }</span>
+
+func ToPropertyModels(vos []vo.PropertyVO) []models.Property <span class="cov0" title="0">{
+        return util.Map(vos, ToPropertyModel)
+}</span>
+
+func ToPropertyModel(vo vo.PropertyVO) *models.Property <span class="cov0" title="0">{
+        return &amp;models.Property{
+                Name:  vo.Name,
+                Kind:  vo.Kind,
+                Value: vo.Value,
+        }
+}</span>
 </pre>
 		
-		<pre class="file" id="file1" style="display: none">package vo
+		<pre class="file" id="file1" style="display: none">package util
 
 import (
         "github.com/sweetrpg/common.go/util"
         "github.com/sweetrpg/model-core.go/models"
+        "github.com/sweetrpg/model-core.go/vo"
 )
 
-type TagVO struct {
-        Name  string `json:"name" jsonapi:"attr,name"`
-        Value string `json:"value" jsonapi:"attr,value"`
-}
-
-func FromTagModels(models []models.Tag) []TagVO <span class="cov0" title="0">{
+func FromTagModels(models []models.Tag) []vo.TagVO <span class="cov8" title="1">{
         return util.Map(models, FromTagModel)
 }</span>
 
-func FromTagModel(model models.Tag) *TagVO <span class="cov0" title="0">{
-        return &amp;TagVO{
+func FromTagModel(model models.Tag) *vo.TagVO <span class="cov8" title="1">{
+        return &amp;vo.TagVO{
                 Name:  model.Name,
                 Value: model.Value,
+        }
+}</span>
+
+func ToTagModels(vos []vo.TagVO) []models.Tag <span class="cov8" title="1">{
+        return util.Map(vos, ToTagModel)
+}</span>
+
+func ToTagModel(vo vo.TagVO) *models.Tag <span class="cov8" title="1">{
+        return &amp;models.Tag{
+                Name:  vo.Name,
+                Value: vo.Value,
         }
 }</span>
 </pre>
