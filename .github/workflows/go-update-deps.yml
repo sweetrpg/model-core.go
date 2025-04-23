@@ -10,6 +10,9 @@ on:
         types:
             - common-published
 
+permissions:
+    contents: write
+
 jobs:
     tests:
         name: Update dependencies for ${{ matrix.name }}

@@ -14,11 +14,12 @@ on:
           - patch
         required: true
 
+permissions:
+    contents: write
+
 jobs:
   tag:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     concurrency: publish
     steps:
       - uses: actions/checkout@v4
