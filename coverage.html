@@ -55,7 +55,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">github.com/sweetrpg/model-core.go/util/property.go (0.0%)</option>
+				<option value="file0">github.com/sweetrpg/model-core.go/util/property.go (100.0%)</option>
 				
 				<option value="file1">github.com/sweetrpg/model-core.go/util/tag.go (100.0%)</option>
 				
@@ -64,8 +64,17 @@
 			<div id="legend">
 				<span>not tracked</span>
 			
-				<span class="cov0">not covered</span>
-				<span class="cov8">covered</span>
+				<span class="cov0">no coverage</span>
+				<span class="cov1">low coverage</span>
+				<span class="cov2">*</span>
+				<span class="cov3">*</span>
+				<span class="cov4">*</span>
+				<span class="cov5">*</span>
+				<span class="cov6">*</span>
+				<span class="cov7">*</span>
+				<span class="cov8">*</span>
+				<span class="cov9">*</span>
+				<span class="cov10">high coverage</span>
 			
 			</div>
 		</div>
@@ -79,11 +88,11 @@ import (
         "github.com/sweetrpg/model-core.go/vo"
 )
 
-func FromPropertyModels(models []models.Property) []vo.PropertyVO <span class="cov0" title="0">{
+func FromPropertyModels(models []models.Property) []vo.PropertyVO <span class="cov6" title="2">{
         return util.Map(models, FromPropertyModel)
 }</span>
 
-func FromPropertyModel(model models.Property) *vo.PropertyVO <span class="cov0" title="0">{
+func FromPropertyModel(model models.Property) *vo.PropertyVO <span class="cov10" title="3">{
         return &amp;vo.PropertyVO{
                 Name:  model.Name,
                 Kind:  model.Kind,
@@ -91,11 +100,11 @@ func FromPropertyModel(model models.Property) *vo.PropertyVO <span class="cov0" 
         }
 }</span>
 
-func ToPropertyModels(vos []vo.PropertyVO) []models.Property <span class="cov0" title="0">{
+func ToPropertyModels(vos []vo.PropertyVO) []models.Property <span class="cov6" title="2">{
         return util.Map(vos, ToPropertyModel)
 }</span>
 
-func ToPropertyModel(vo vo.PropertyVO) *models.Property <span class="cov0" title="0">{
+func ToPropertyModel(vo vo.PropertyVO) *models.Property <span class="cov10" title="3">{
         return &amp;models.Property{
                 Name:  vo.Name,
                 Kind:  vo.Kind,
@@ -112,22 +121,22 @@ import (
         "github.com/sweetrpg/model-core.go/vo"
 )
 
-func FromTagModels(models []models.Tag) []vo.TagVO <span class="cov8" title="1">{
+func FromTagModels(models []models.Tag) []vo.TagVO <span class="cov6" title="2">{
         return util.Map(models, FromTagModel)
 }</span>
 
-func FromTagModel(model models.Tag) *vo.TagVO <span class="cov8" title="1">{
+func FromTagModel(model models.Tag) *vo.TagVO <span class="cov10" title="3">{
         return &amp;vo.TagVO{
                 Name:  model.Name,
                 Value: model.Value,
         }
 }</span>
 
-func ToTagModels(vos []vo.TagVO) []models.Tag <span class="cov8" title="1">{
+func ToTagModels(vos []vo.TagVO) []models.Tag <span class="cov6" title="2">{
         return util.Map(vos, ToTagModel)
 }</span>
 
-func ToTagModel(vo vo.TagVO) *models.Tag <span class="cov8" title="1">{
+func ToTagModel(vo vo.TagVO) *models.Tag <span class="cov10" title="3">{
         return &amp;models.Tag{
                 Name:  vo.Name,
                 Value: vo.Value,
