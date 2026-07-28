@@ -1,6 +1,7 @@
 # model-core.go
 
 [![CI](https://github.com/sweetrpg/model-core.go/actions/workflows/ci.yaml/badge.svg)](https://github.com/sweetrpg/model-core.go/actions/workflows/ci.yaml)
+[![Coverage](https://img.shields.io/endpoint?url=https://sweetrpg.github.io/model-core.go/coverage-badge.json)](https://sweetrpg.github.io/model-core.go/)
 [![License](https://img.shields.io/github/license/sweetrpg/model-core.go.svg)](https://img.shields.io/github/license/sweetrpg/model-core.go.svg)
 [![Issues](https://img.shields.io/github/issues/sweetrpg/model-core.go.svg)](https://img.shields.io/github/issues/sweetrpg/model-core.go.svg)
 [![PRs](https://img.shields.io/github/issues-pr/sweetrpg/model-core.go.svg)](https://img.shields.io/github/issues-pr/sweetrpg/model-core.go.svg)
