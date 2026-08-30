@@ -1,6 +1,6 @@
 module github.com/sweetrpg/model-core.go
 
-go 1.24.2
+go 1.26.5
 
 require (
 	github.com/stretchr/testify v1.11.1
