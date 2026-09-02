@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>util: Go Coverage Report</title>
+		<title>models: Go Coverage Report</title>
 		<style>
 			body {
 				background: black;
@@ -55,9 +55,11 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">github.com/sweetrpg/model-core.go/util/property.go (100.0%)</option>
+				<option value="file0">github.com/sweetrpg/model-core.go/models/auditable.go (100.0%)</option>
 				
-				<option value="file1">github.com/sweetrpg/model-core.go/util/tag.go (100.0%)</option>
+				<option value="file1">github.com/sweetrpg/model-core.go/util/property.go (100.0%)</option>
+				
+				<option value="file2">github.com/sweetrpg/model-core.go/util/tag.go (100.0%)</option>
 				
 				</select>
 			</div>
@@ -80,7 +82,50 @@
 		</div>
 		<div id="content">
 		
-		<pre class="file" id="file0" style="display: none">package util
+		<pre class="file" id="file0" style="display: none">// Model package
+package models
+
+import "time"
+
+// SystemActor is the canonical created_by/updated_by value for a write not driven by an
+// authenticated user - event consumers, cron jobs, backfills. Services stamp this rather than
+// leaving *_by empty or inventing a per-service string.
+const SystemActor = "system"
+
+// Base auditable model
+type Auditable struct {
+        CreatedAt time.Time  `bson:"created_at" json:"created_at" jsonapi:"attr,created_at"`
+        CreatedBy string     `bson:"created_by" json:"created_by" jsonapi:"attr,created_by"`
+        UpdatedAt time.Time  `bson:"updated_at" json:"updated_at" jsonapi:"attr,updated_at"`
+        UpdatedBy string     `bson:"updated_by" json:"updated_by" jsonapi:"attr,updated_by"`
+        DeletedAt *time.Time `bson:"deleted_at,omitempty" json:"deleted_at" jsonapi:"attr,deleted_at,omitempty"`
+        DeletedBy *string    `bson:"deleted_by,omitempty" json:"deleted_by" jsonapi:"attr,deleted_by,omitempty"`
+}
+
+// StampCreate sets the create and update audit fields to the same user and time. Call it from a
+// data layer's Create* with the acting user's canonical id (or SystemActor for a non-user write).
+func StampCreate(a *Auditable, userID string, now time.Time) <span class="cov10" title="3">{
+        if a == nil </span><span class="cov1" title="1">{
+                return
+        }</span>
+        <span class="cov6" title="2">a.CreatedAt = now
+        a.CreatedBy = userID
+        a.UpdatedAt = now
+        a.UpdatedBy = userID</span>
+}
+
+// StampUpdate advances the update audit fields, leaving CreatedAt/CreatedBy untouched. Call it
+// from every mutating data-layer path with the acting user's canonical id (or SystemActor).
+func StampUpdate(a *Auditable, userID string, now time.Time) <span class="cov6" title="2">{
+        if a == nil </span><span class="cov1" title="1">{
+                return
+        }</span>
+        <span class="cov1" title="1">a.UpdatedAt = now
+        a.UpdatedBy = userID</span>
+}
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package util
 
 import (
         "github.com/sweetrpg/common.go/util"
@@ -113,7 +158,7 @@ func ToPropertyModel(vo vo.PropertyVO) *models.Property <span class="cov10" titl
 }</span>
 </pre>
 		
-		<pre class="file" id="file1" style="display: none">package util
+		<pre class="file" id="file2" style="display: none">package util
 
 import (
         "github.com/sweetrpg/common.go/util"
